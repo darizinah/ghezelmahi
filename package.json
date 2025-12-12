@@ -1,0 +1,30 @@
+{
+  "name": "ghapp",
+  "version": "1.0.0",
+  "description": "سامانه مدیریت سفارشات و فروش ماهی",
+  "scripts": {
+    "build:js": "esbuild index.tsx --bundle --outfile=dist/bundle.js --minify --loader:.ts=ts --loader:.tsx=tsx",
+    "build:css": "tailwindcss -i ./styles.css -o ./dist/styles.css --minify",
+    "build": "npm-run-all --parallel build:js build:css",
+    "watch:js": "esbuild index.tsx --bundle --outfile=dist/bundle.js --servedir=. --watch",
+    "watch:css": "tailwindcss -i ./styles.css -o ./dist/styles.css --watch",
+    "dev": "npm-run-all --parallel watch:js watch:css"
+  },
+  "dependencies": {
+    "@google/genai": "^1.30.0",
+    "lucide-react": "^0.555.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "esbuild": "^0.21.4",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
+  }
+}
